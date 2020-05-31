@@ -24,7 +24,7 @@ public class Heap {
         int s = heap.size() - 1;
         while (s > 1) {
             int f = s / 2;
-            if (heap.get(f) > heap.get(s)) {
+            if (heap.get(f) < heap.get(s)) {
                 return;
             }
             int aux = heap.get(f);
@@ -73,9 +73,9 @@ public class Heap {
         for (int i = 0; i < A.length; i++) {
             insertInHeap(b, A[i]);
         }
-        System.out.println("\n MOSTRAR B");
-        for (Integer minHeap : b) {
-            System.out.print(minHeap + "-");
+        System.out.println("\nMINHEAP");
+        for (int i = 1; i < b.size(); i++) {
+            System.out.print(b.get(i) + "-");
         }
         for (int i = 0; i < A.length; i++) {
             A[i] = deleteOfHeap(b);
@@ -87,6 +87,7 @@ public class Heap {
         Heap heap = new Heap();
         ArrayList<Integer> l = new ArrayList<>();
         l.add(0);
+        //PRIMER EJEMPLO 
         heap.insertInHeap(l, 1);
         heap.insertInHeap(l, 3);
         heap.insertInHeap(l, 4);
@@ -102,35 +103,38 @@ public class Heap {
         heap.insertInHeap(l, 55);
         heap.insertInHeap(l, 2);
 
+        System.out.println("PRIMER EJEMPLO");
         System.out.println("MinHeap:");
         for (int i = 1; i < l.size(); i++) {
             System.out.print(l.get(i) + "-");
         }
 
-        /*  System.out.println("\n AHORA VOY A BORRAR");
-        int n=1;
-        int[] array = new int[15];
-        while(n<14){
+        System.out.println("\nSORT");
+        int n = 0;
+        int[] array = new int[14];
+        while (n <= 13) {
             array[n] = heap.deleteOfHeap(l);
+            System.out.print(array[n] + "-");
             n++;
         }
-         */
- /* int[] array = new int[15];
+        
+        int[] ar = new int[14];
         //add elements
-        for(int i = 0; i<array.length; i++){
-            array[i] = (int) (Math.random()*100);
+        for (int i = 0; i < ar.length; i++) {
+            ar[i] = (int) (Math.random() * 100);
         }
-        //show array
-        for(int i = 0; i<array.length; i++){
-            System.out.print(array[i]+ "-");
+        System.out.println("\nSEGUNDO EJEMPLO");
+        //show my array
+        System.out.println("SHOW ARRAY");
+        for (int i = 0; i < ar.length; i++) {
+            System.out.print(ar[i] + "-");
         }
-        //sort array
-        heap.heapSort(array);
-        //show array
-        System.out.println("\n Show array");
-        for(int i = 0; i<array.length; i++){
-            System.out.print(array[i]+ "-");
-        }*/
+        heap.heapSort(ar);
+        
+        System.out.println("\nSORT ARRAY");
+        for(int i = 0; i<ar.length; i++){
+            System.out.print(ar[i]+ "-");
+        }
     }
 
 }
