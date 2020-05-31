@@ -103,7 +103,7 @@ public class Heap {
         heap.insertInHeap(l, 55);
         heap.insertInHeap(l, 2);
 
-        System.out.println("PRIMER EJEMPLO");
+        System.out.println("FIRST EXAMPLE");
         System.out.println("MinHeap:");
         for (int i = 1; i < l.size(); i++) {
             System.out.print(l.get(i) + "-");
@@ -123,7 +123,7 @@ public class Heap {
         for (int i = 0; i < ar.length; i++) {
             ar[i] = (int) (Math.random() * 100);
         }
-        System.out.println("\nSEGUNDO EJEMPLO");
+        System.out.println("\nSECOND EXAMPLE");
         //show my array
         System.out.println("SHOW ARRAY");
         for (int i = 0; i < ar.length; i++) {
